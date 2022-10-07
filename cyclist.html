@@ -1,0 +1,46 @@
+---
+layout: page
+title: UCI WT cyclist
+peloton: ["Remco", "Pogi", "MVDP"]
+pursuvivant:
+    jumbo: laporte
+    ineos: bernal
+    quickstep: alaphilippe
+---
+
+<ul>
+    {% for i in page.peloton %}
+    <li>{{ i }}</li>
+
+    {% endfor %}
+</ul>
+
+<hr>
+
+<ul>
+    {% for j in page.pursuvivant %}
+    <li>squadra: {{ j[0] }} --> corridore: {{ j[1] }}</li>
+
+    {% endfor %}
+</ul>
+<hr>
+<hr>
+<hr>
+
+<ul>
+    {% for k in (0..4)%}
+        <li>{{ k }}</li>
+    {% endfor %}
+</ul>
+<hr>
+<ul>
+    {% assign lunghezza_array = page.peloton.size %}
+    Size dell'array: {{ lunghezza_array }}
+    {% for z in (0..lunghezza_array) %}
+        {% if z == lunghezza_array %}
+           {% break %}
+        {% else %}          
+           <li> {{page.peloton[z]}} </li>
+        {% endif %}
+    {% endfor %}
+</ul>
